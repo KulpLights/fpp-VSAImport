@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/home/fpp/media/plugins/fpp-VSAImport/bin/vsa-utils -j $1

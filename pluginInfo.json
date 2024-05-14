@@ -1,0 +1,27 @@
+{
+	"repoName": "fpp-VSAImport",
+	"name": "FPP VSAImport",
+	"author": "Daniel Kulp",
+	"description": "Import and map VSA files to playable fseq files",
+	"homeURL": "https://github.com/KulpLights/fpp-VSAImport",
+	"srcURL": "https://github.com/KulpLights/fpp-VSAImport.git",
+	"bugURL": "https://github.com/KulpLights/fpp-VSAImport/issues",
+    "fileExtensions": {
+        "vsa": {
+            "onUpload": "scripts/vsaimport",
+            "infoCommand": "scripts/vsainfo",
+            "tab": "VSA",
+            "folder": "vsa"
+        }
+    },
+	"versions": [
+        {
+            "minFPPVersion": "8.0",
+            "maxFPPVersion": "0",
+            "branch": "master",
+            "sha": "",
+            "allowUpdates": 1
+        }
+	]
+}
+
