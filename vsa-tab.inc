@@ -14,9 +14,8 @@ var tablesorterOptions_vsa= $.extend(true,{}, tablesorterOptions_Common, tableso
 
 </script>
 
-
 <div class="tab-pane fade" id="tab-vsa" role="tabpanel" aria-labelledby="tab-vsa-tab">
-    <div id="divLogs">
+    <div id="divvsa">
     <div class="backdrop">
         <legend> VSA Files </legend>
         <div id="divvsaData" class="fileManagerDivData">
@@ -44,7 +43,6 @@ var tablesorterOptions_vsa= $.extend(true,{}, tablesorterOptions_Common, tableso
     </div>
     </div>
 </div>
-
 
 <script>
  $('#tblvsa').on('mousedown', 'tbody tr', function(event,ui) {
