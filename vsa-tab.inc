@@ -35,9 +35,10 @@ var tablesorterOptions_vsa= $.extend(true,{}, tablesorterOptions_Common, tableso
         <div class='form-actions'>
         <input onclick="ClearSelections('vsa');" class="buttons" type="button" value="Clear" />
         <input onclick="ButtonHandler('vsa', 'fileInfo');" class="disableButtons singlevsaButton" type="button" value="VSA Info" />
-        <input onclick="ButtonHandler('vsa', 'download');" class="disableButtons singlevsaButton multiLogsButton" type="button" value="Download" />
+        <input onclick="ButtonHandler('vsa', 'generate');" class="disableButtons singlevsaButton" type="button" value="Generate FSEQ" />
+        <input onclick="ButtonHandler('vsa', 'download');" class="disableButtons singlevsaButton multivsaButton" type="button" value="Download" />
         <input onclick="ButtonHandler('vsa', 'rename');" class="disableButtons singlevsaButton" type="button" value="Rename" />
-        <input onclick="ButtonHandler('vsa', 'delete');" class="disableButtons singlevsaButton multiLogsButton" type="button" value="Delete" />
+        <input onclick="ButtonHandler('vsa', 'delete');" class="disableButtons singlevsaButton multivsaButton" type="button" value="Delete" />
         </div>
         <div class="note"><strong>CTRL+Click to select multiple items</strong></div>
     </div>
@@ -65,5 +66,22 @@ function FileInfovsa(filename) {
             }
         });
     });
+}
+function vsageneratePressed(filename) {
+    $.get("api/file/onUpload/vsa/" + filename, function (data) {
+        GetAllFiles();
+        DoModalDialog({
+            id: "VSA",
+            title: "VSA",
+            class: "modal-lg modal-dialog-scrollable",
+            body: '<pre>' + data + '</pre>',
+            keyboard: true,
+            backdrop: true,
+            buttons: {
+                "Close": function() {CloseModalDialog("VSA");}
+            }
+        });
+    });
+
 }
 </script>
