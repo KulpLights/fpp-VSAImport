@@ -53,7 +53,7 @@ var tablesorterOptions_vsa= $.extend(true,{}, tablesorterOptions_Common, tableso
 function FileInfovsa(filename) {
     $('#fileText').html("Getting VSA Info.");
 
-    $.get("api/file/info/fpp-VSAImport/vsa/" + filename, function (data) {
+    $.get("api/file/info/fpp-VSAImport/vsa/" + encodeURIComponent(filename), function (data) {
         DoModalDialog({
             id: "VSAViewer",
             title: "VSA Information",
@@ -68,7 +68,7 @@ function FileInfovsa(filename) {
     });
 }
 function vsageneratePressed(filename) {
-    $.get("api/file/onUpload/vsa/" + filename, function (data) {
+    $.get("api/file/onUpload/vsa/" + encodeURIComponent(filename), function (data) {
         GetAllFiles();
         DoModalDialog({
             id: "VSA",

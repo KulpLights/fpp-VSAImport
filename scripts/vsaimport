@@ -1,4 +1,4 @@
 #!/bin/bash
 
-BASENAME=$(basename $1 .vsa)
-/home/fpp/media/plugins/fpp-VSAImport/bin/vsa-utils -o "/home/fpp/media/sequences/$BASENAME.fseq" $1
+BASENAME=$(basename "$1" .vsa)
+/home/fpp/media/plugins/fpp-VSAImport/bin/vsa-utils -o "/home/fpp/media/sequences/$BASENAME.fseq" "$1"

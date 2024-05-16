@@ -1,3 +1,2 @@
 #!/bin/bash
-
-/home/fpp/media/plugins/fpp-VSAImport/bin/vsa-utils -j $1
+/home/fpp/media/plugins/fpp-VSAImport/bin/vsa-utils -j "$1"
