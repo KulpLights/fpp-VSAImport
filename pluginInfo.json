@@ -1,7 +1,7 @@
 {
 	"repoName": "fpp-VSAImport",
 	"name": "FPP VSAImport",
-	"author": "Daniel Kulp",
+	"author": "SkullTroniX",
 	"description": "Import and map VSA files to playable fseq files",
 	"homeURL": "https://github.com/KulpLights/fpp-VSAImport",
 	"srcURL": "https://github.com/KulpLights/fpp-VSAImport.git",
