@@ -1,4 +1,27 @@
 #!/bin/bash
 
+
+CFGFILE="${MEDIADIR}/config/plugin.fpp-VSAImport"
+getSetting() {
+    SETTING=$1
+    if [ -f "${CFGFILE}" ]; then
+        if [ -f "/usr/bin/flock" ]; then
+            exec {FD}<$CFGFILE
+            flock -n ${FD} || exit 1
+            grep -i --binary-files=text "^${SETTING}\s*=.*" ${CFGFILE} | sed -E -e "s/^${SETTING}\s*=\s*(.*)/\1/" -e 's/"//g'
+            flock -u ${FD}
+        else
+            grep -i --binary-files=text "^${SETTING}\s*=.*" ${CFGFILE} | sed -E -e "s/^${SETTING}\s*=\s*(.*)/\1/" -e 's/"//g'
+        fi
+    fi
+}
+
+
+
+FRAMERATE=50
+if [ -f $OPTIONSFILE ]; then
+    FRAMERATE=$(getSetting VSAFrameRate)
+fi
+
 BASENAME=$(basename "$1" .vsa)
-/home/fpp/media/plugins/fpp-VSAImport/bin/vsa-utils -o "/home/fpp/media/sequences/$BASENAME.fseq" "$1"
+/home/fpp/media/plugins/fpp-VSAImport/bin/vsa-utils -f $FRAMERATE -o "/home/fpp/media/sequences/$BASENAME.fseq" "$1"

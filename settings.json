@@ -1,0 +1,26 @@
+{
+    "settingGroups": {
+
+    },
+    "settings": {
+        "VSAFrameRate": {
+            "name": "VSAFrameRate",
+            "description": "Frame Rate",
+            "tip": "Frame Rate/timing for the generated FSEQ file",
+            "level": 0,
+            "restart": 0,
+            "reboot": 0,
+            "default": 50,
+            "type": "select",
+            "labelClass": "col-auto",
+            "options": {
+                "100fps/10ms": 100,
+                "50fps/20ms": 50,
+                "40fps/25ms": 40,
+                "30fps/33ms": 30,
+                "25fps/40ms": 40,
+                "20fps/50ms": 20
+            }
+        }
+    }
+}
