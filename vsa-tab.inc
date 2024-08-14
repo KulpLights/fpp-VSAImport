@@ -25,6 +25,17 @@ var tablesorterOptions_vsa= $.extend(true,{}, tablesorterOptions_Common, tableso
 #VSAFrameRateRow {
     float: right;
 }
+#VSAUsePWMConfigRow .printSettingLabelCol {
+    text-wrap: nowrap;
+}
+#VSAUsePWMConfigRow {
+    float: right;
+}
+
+.vsaFormActions {
+    margin-bottom: 0px;
+}
+
 </style>
 <div class="tab-pane fade" id="tab-vsa" role="tabpanel" aria-labelledby="tab-vsa-tab">
     <div id="divvsa">
@@ -45,7 +56,7 @@ var tablesorterOptions_vsa= $.extend(true,{}, tablesorterOptions_Common, tableso
             </div>
             <div class="row">
                 <div class="col-auto">
-                    <div class='form-actions'>
+                    <div class='vsaFormActions form-actions'>
                         <input onclick="ClearSelections('vsa');" class="buttons" type="button" value="Clear" />
                         <input onclick="ButtonHandler('vsa', 'fileInfo');" class="disableButtons singlevsaButton" type="button" value="VSA Info" />
                         <input onclick="ButtonHandler('vsa', 'generate');" class="disableButtons singlevsaButton" type="button" value="Generate FSEQ" />
@@ -53,10 +64,17 @@ var tablesorterOptions_vsa= $.extend(true,{}, tablesorterOptions_Common, tableso
                         <input onclick="ButtonHandler('vsa', 'rename');" class="disableButtons singlevsaButton" type="button" value="Rename" />
                         <input onclick="ButtonHandler('vsa', 'delete');" class="disableButtons singlevsaButton multivsaButton" type="button" value="Delete" />
                     </div>
-                    <div class="note"><strong>CTRL+Click to select multiple items</strong></div>
                 </div>
                 <div class="col" style="margin-top: 1em;">
                     <? PrintSetting('VSAFrameRate', '', array(), 'fpp-VSAImport') ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto">
+                    <div class="note"><strong>CTRL+Click to select multiple items</strong></div>
+                </div>
+                <div class="col"">
+                    <? PrintSetting('VSAUsePWMConfig', '', array(), 'fpp-VSAImport') ?>
                 </div>
             </div>
         </div>

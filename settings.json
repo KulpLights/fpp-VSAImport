@@ -1,6 +1,9 @@
 {
     "settingGroups": {
-
+        "VSA": {
+            "description": "VSA Settings",
+            "settings": ["VSAFrameRate", "VSAUsePWMConfig"]
+        }
     },
     "settings": {
         "VSAFrameRate": {
@@ -21,6 +24,18 @@
                 "25fps/40ms": 40,
                 "20fps/50ms": 20
             }
+        },
+        "VSAUsePWMConfig": {
+            "name": "VSAUsePWMConfig",
+            "description": "Use PWM Config",
+            "tip": "Use PWM Configuration from PWM tab to override values in VSA",
+            "level": "0",
+            "restart": 0,
+            "reboot": 0,
+            "default": 0,
+            "type": "checkbox",
+            "labelClass": "col-auto",
+            "checkFile": ["/home/fpp/media/config/co-pwm.json"]
         }
     }
 }

@@ -19,9 +19,15 @@ getSetting() {
 
 
 FRAMERATE=50
-if [ -f $OPTIONSFILE ]; then
+EXTRAFLAGS=
+if [ -f $CFGFILE ]; then
     FRAMERATE=$(getSetting VSAFrameRate)
+    USEPWM=$(getSetting VSAUsePWMConfig)
+    if [ "${USEPWM}" == "1" ]; then
+        EXTRAFLAGS="-p"
+    fi
 fi
 
 BASENAME=$(basename "$1" .vsa)
-/home/fpp/media/plugins/fpp-VSAImport/bin/vsa-utils -f $FRAMERATE -o "/home/fpp/media/sequences/$BASENAME.fseq" "$1"
+
+/home/fpp/media/plugins/fpp-VSAImport/bin/vsa-utils -f $FRAMERATE $EXTRAFLAGS -o "/home/fpp/media/sequences/$BASENAME.fseq" "$1"
